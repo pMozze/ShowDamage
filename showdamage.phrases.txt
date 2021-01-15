@@ -1,0 +1,13 @@
+"Phrases"
+{
+	"Damage"
+	{
+		"#format"	"{1:d}"
+		"ru"	"{1}"
+	}
+
+	"Kill"
+	{
+		"ru"	"УБИТ"
+	}
+}
