@@ -15,7 +15,7 @@ public void OnPluginStart() {
 public void onPlayerHurt(Event hEvent, const char[] szName, bool bDontBroadCast) {
 	int iAttacker = GetClientOfUserId(hEvent.GetInt("attacker"));
 
-	if (iAttacker) {
+	if (iAttacker && iAttacker != GetClientOfUserId(hEvent.GetInt("userid"))) {
 		SetHudTextParams(GetRandomFloat(0.25, 0.5), GetRandomFloat(0.25, 0.5), 1.5, 255, 0, 0, 255, 0, 0.0, 0.0, 1.0);
 		ShowHudText(iAttacker, -1, "%t", "Damage", hEvent.GetInt("dmg_health"));
 	}
@@ -24,7 +24,7 @@ public void onPlayerHurt(Event hEvent, const char[] szName, bool bDontBroadCast)
 public void onPlayerDeath(Event hEvent, const char[] szName, bool bDontBroadCast) {
 	int iAttacker = GetClientOfUserId(hEvent.GetInt("attacker"));
 
-	if (iAttacker) {
+	if (iAttacker && iAttacker != GetClientOfUserId(hEvent.GetInt("userid"))) {
 		SetHudTextParams(GetRandomFloat(0.25, 0.5), GetRandomFloat(0.25, 0.5), 1.5, 255, 0, 0, 255, 0, 0.0, 0.0, 1.0);
 		ShowHudText(iAttacker, -1, "%t", "Kill");
 	}
